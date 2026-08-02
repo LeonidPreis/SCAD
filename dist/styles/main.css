@@ -1,5 +1,10 @@
-body {
+.canvas {
+  border-radius: 2mm;
   background-color: #101010;
+}
+
+body {
+  background-color: #252525;
 }
 
 /*# sourceMappingURL=main.css.map */

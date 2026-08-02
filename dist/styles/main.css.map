@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../src/styles/main.sass"],"names":[],"mappings":"AAAA;EACI","file":"main.css"}
+{"version":3,"sourceRoot":"","sources":["../../src/styles/components/canvas.sass","../../src/styles/main.sass"],"names":[],"mappings":"AAAA;EACI;EACA;;;ACAJ;EACI","file":"main.css"}
