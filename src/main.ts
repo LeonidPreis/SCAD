@@ -1,8 +1,10 @@
 import { Point, PointType } from "./primitives/point.js";
 import { Canvas } from "./components/canvas.js";
+import { Component } from "./components/component.js";
 
-const point = new Point(2,3, PointType.Middle);
-console.log(point);
-
-const canvas = new Canvas('#main-canvas');
-console.log(canvas.center);
+const canvas = new Component('canvas');
+canvas.attributes.set('id','main-canvas');
+canvas.attributes.set('data-layer', 'canvas');
+document.body.appendChild(canvas.element);
+console.log('has', canvas.attributes.has('data-layer'));
+console.log(canvas);
