@@ -1,4 +1,4 @@
-export class ClassManager {
+export class ClassesManager {
     private readonly element: HTMLElement;
 
     constructor(element: HTMLElement) {

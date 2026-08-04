@@ -1,14 +1,14 @@
 import { AttributesManager } from "./attribute-manager.js";
-import { ClassManager } from "./component-class-manager.js";
+import { ClassesManager } from "./class-manager.js";
 
 export class Component {
     element: HTMLElement;
-    classes: ClassManager;
+    classes: ClassesManager;
     attributes: AttributesManager;
 
     constructor(tag: string) {
         this.element = document.createElement(tag);
-        this.classes = new ClassManager(this.element);
+        this.classes = new ClassesManager(this.element);
         this.attributes = new AttributesManager(this.element);
     }
 }
