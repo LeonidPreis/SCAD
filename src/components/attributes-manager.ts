@@ -2,7 +2,7 @@ import { DatasetManager } from "./dataset-manager.js";
 
 export class AttributesManager {
     private readonly element: HTMLElement;
-    dataset: DatasetManager;
+    readonly dataset: DatasetManager;
 
     constructor(element: HTMLElement) {
         this.element = element;

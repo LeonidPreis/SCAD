@@ -1,13 +1,16 @@
-import { AttributesManager } from "./attribute-manager.js";
-import { ClassesManager } from "./class-manager.js";
+import { AttributesManager } from "./attributes-manager.js";
+import { ClassesManager } from "./classes-manager.js";
+import { HierarchyManager } from "./hierarchy-manager.js";
 export class Component {
     element;
     classes;
     attributes;
+    hierarchy;
     constructor(tag) {
         this.element = document.createElement(tag);
         this.classes = new ClassesManager(this.element);
         this.attributes = new AttributesManager(this.element);
+        this.hierarchy = new HierarchyManager(this.element);
     }
 }
 // export class Component {
@@ -21,14 +24,7 @@ export class Component {
 //     hide() {
 //         this.element.classList.add('hidden');
 //     }
-//     append(component) {
-//          const element = component instanceof Component
-//              ? component.element
-//              : component;
-//         this.element.append(element);
-//         return component;
-//     }
-//     remove() {
+//   //     remove() {
 //         for (const listener of this.listeners) {
 //             listener.target.removeEventListener(
 //                 listener.type,
