@@ -1,13 +1,54 @@
 @use './components/surface'
-@use './components/canvas'
     
 body
     font-family: 'Inter'
 
 body.surface-0
-    // display: grid
-    // grid-template-columns: repeat(5, 1fr)
     gap: 2mm 
     flex-direction: row
     align-items: center
     justify-content: center
+
+.colors
+    position: absolute
+    top: 50%
+    left: 50%
+    width: max-content
+    height: max-content
+    transform: translate(-50%, -50%)
+    display: flex
+    flex-direction: row
+    gap: 2.5mm
+
+.color
+    width: 20mm
+    height: 10mm
+    border-radius: 7.5mm
+    corner-shape: squircle
+    color: black
+    font-size: 3.5mm
+    font-weight: 400
+    display: flex
+    align-items: center
+    justify-content: center
+
+
+.primary
+    background-color: var(--primary-color)
+.variant
+    background-color: var(--variant-color)
+.secondary
+    background-color: var(--secondary-color)
+.accent
+    background-color: var(--accent-color)
+.success
+    background-color: var(--success-color)
+.error
+    background-color: var(--error-color)
+
+.themes
+    position: absolute
+    bottom: 20mm
+    left: 50%
+    transform: translateX(-50%)
+    background-color: transparent
