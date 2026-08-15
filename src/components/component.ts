@@ -1,5 +1,7 @@
+import { AppearanceManager } from "./appearance-manager.js";
 import { AttributesManager } from "./attributes-manager.js";
 import { ClassesManager } from "./classes-manager.js";
+import { EventManager } from "./event-manager.js";
 import { HierarchyManager } from "./hierarchy-manager.js";
 
 export class Component {
@@ -7,52 +9,15 @@ export class Component {
     classes: ClassesManager;
     attributes: AttributesManager;
     hierarchy: HierarchyManager;
+    appearance: AppearanceManager;
+    events: EventManager;
 
     constructor(tag: string) {
         this.element = document.createElement(tag);
         this.classes = new ClassesManager(this.element);
         this.attributes = new AttributesManager(this.element);
         this.hierarchy = new HierarchyManager(this.element);
+        this.appearance = new AppearanceManager(this.element);
+        this.events = new EventManager(this.element);
     }
-
-
 }
-
-// export class Component {
-//     constructor(tag = 'div') {
-//         this.element = document.createElement(tag);
-//         this.listeners = [];
-//     }
-//     show() {
-//         this.element.classList.remove('hidden');
-//     }
-//     hide() {
-//         this.element.classList.add('hidden');
-//     }
-//   //     remove() {
-//         for (const listener of this.listeners) {
-//             listener.target.removeEventListener(
-//                 listener.type,
-//                 listener.callback,
-//                 listener.options
-//             );
-//         }
-//         this.listeners.length = 0;
-//         this.element.remove();
-//     }
-
-//     on(target, type, callback, options) {
-//         target.addEventListener(type, callback, options);
-//         this.listeners.push({ target, type, callback, options });
-//         return callback;
-//     }
-//     off(target, type, callback, options) {
-//         target.removeEventListener(type, callback, options);
-//         this.listeners = this.listeners.filter(listener =>
-//             listener.target !== target ||
-//             listener.type !== type ||
-//             listener.callback !== callback ||
-//             listener.options !== options
-//         );
-//     }
-// }
