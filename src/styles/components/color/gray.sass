@@ -1,0 +1,10 @@
+@use './overlay'
+@use './contrast'
+@use '../root'
+
+@for $elevation from 0 through 10
+    .gray-#{$elevation}
+        $background: overlay.get(#080808, #ffffff, $elevation)
+
+        background-color: $background
+        color: contrast.on($background)

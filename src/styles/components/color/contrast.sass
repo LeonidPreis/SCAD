@@ -1,0 +1,23 @@
+@use './luminance'
+@use 'sass:math'
+
+@function ratio($foreground, $background)
+    $foreground-luminance: luminance.get($foreground)
+    $background-luminance: luminance.get($background)
+
+    $lighter: math.max($foreground-luminance, $background-luminance)
+    $darker: math.min($foreground-luminance, $background-luminance)
+
+    @return math.div(($lighter + 0.05), ($darker + 0.05))
+
+@function on($background)
+    $black: #000000
+    $white: #ffffff
+
+    $black-ratio: ratio($black, $background)
+    $white-ratio: ratio($white, $background)
+
+    @return if(
+        sass($black-ratio >= $white-ratio): $black;
+        else: $white
+    )

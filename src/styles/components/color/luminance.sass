@@ -1,0 +1,21 @@
+@use 'sass:math'
+@use 'sass:color'
+
+@function get($color)
+    $red: math.div(color.channel($color, 'red', $space: rgb), 255)
+    $green: math.div(color.channel($color, 'green', $space: rgb), 255)
+    $blue: math.div(color.channel($color, 'blue', $space: rgb), 255)
+
+    $red: if(
+        sass($red <= 0.03928): math.div($red, 12.92);
+        else: math.pow(math.div($red + 0.055, 1.055), 2.4))
+
+    $green: if(
+        sass($green <= 0.03928): math.div($green, 12.92);
+        else: math.pow(math.div($green + 0.055, 1.055), 2.4))
+
+    $blue: if(
+        sass($blue <= 0.03928): math.div($blue, 12.92);
+        else: math.pow(math.div($blue + 0.055, 1.055), 2.4))
+
+    @return 0.2126 * $red + 0.7152 * $green + 0.0722 * $blue

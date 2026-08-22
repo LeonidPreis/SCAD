@@ -1,25 +1,15 @@
-import { Component } from "./components/component.js";
+const overlays = [0, 4, 6, 10, 12, 14, 16, 18, 20, 22, 24];
 
-const body = document.body;
+const container = document.createElement('div');
+container.className = 'gray-scale';
 
-const component = new Component('div');
-body.appendChild(component.element);
-component.element.innerText = 'TEST';
-component.classes.add('surface-4', 'origin-t-l');
+overlays.forEach((percent, level) => {
+    const element = document.createElement('div');
 
-let hovered = false;
+    element.className = `gray gray-${level} border-4`;
+    element.textContent = `${percent}%`;
 
-const HIDE = () => {
-    hovered = true;
-    component.appearance.hide();
-    console.log('hide', { hovered });
-};
+    container.append(element);
+});
 
-const SHOW = () => {
-    hovered = false;
-    component.appearance.show();
-    console.log('show', { hovered });
-};
-
-component.events.on('mouseover', HIDE);
-component.events.on('mouseout', SHOW);
+document.body.append(container);
