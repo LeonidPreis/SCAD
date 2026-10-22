@@ -6,14 +6,18 @@ import { HierarchyManager } from "./hierarchy-manager.js";
 
 export class Component {
     element: HTMLElement;
-    classes: ClassesManager;
-    attributes: AttributesManager;
-    hierarchy: HierarchyManager;
-    appearance: AppearanceManager;
-    events: EventManager;
+    classes!: ClassesManager;
+    attributes!: AttributesManager;
+    hierarchy!: HierarchyManager;
+    appearance!: AppearanceManager;
+    events!: EventManager;
 
-    constructor(tag: string) {
-        this.element = document.createElement(tag);
+    constructor(value: string | HTMLElement) {
+        this.element = value instanceof HTMLElement ? value : document.createElement(value);
+        this.init();
+    }
+
+    init(): void {
         this.classes = new ClassesManager(this.element);
         this.attributes = new AttributesManager(this.element);
         this.hierarchy = new HierarchyManager(this.element);

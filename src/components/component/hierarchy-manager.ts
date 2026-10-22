@@ -16,6 +16,22 @@ export class HierarchyManager {
         this.element = element;
     }
 
+    get text(): string {
+        return this.element.textContent as string;
+    }
+
+    set text(value: string) {
+        this.element.textContent = value;
+    }
+
+    get html(): string {
+        return this.element.innerHTML;
+    }
+
+    set html(value: string) {
+        this.element.innerHTML = value;
+    }
+
     prepend<T extends HTMLElement>(child: T): T {
         this.element.prepend(child);
         return child;
