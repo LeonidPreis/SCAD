@@ -1,0 +1,17 @@
+:root
+    --shadow-color: #050505
+    --shadow-0:  0px 0px 4px 0px rgb(from var(--shadow-color) r g b / 0.240), 0px 4px 12px -2px rgb(from var(--shadow-color) r g b / 0.280), 0px 8px 20px -4px rgb(from var(--shadow-color) r g b / 0.220)
+    --shadow-1:  0px 0px 4px 0px rgb(from var(--shadow-color) r g b / 0.225), 0px 4px 10px -2px rgb(from var(--shadow-color) r g b / 0.255), 0px 7px 18px -4px rgb(from var(--shadow-color) r g b / 0.200)
+    --shadow-2:  0px 0px 3px 0px rgb(from var(--shadow-color) r g b / 0.210), 0px 3px 9px  -2px rgb(from var(--shadow-color) r g b / 0.230), 0px 6px 15px -3px rgb(from var(--shadow-color) r g b / 0.180)
+    --shadow-3:  0px 0px 3px 0px rgb(from var(--shadow-color) r g b / 0.195), 0px 3px 8px  -2px rgb(from var(--shadow-color) r g b / 0.205), 0px 5px 13px -3px rgb(from var(--shadow-color) r g b / 0.160)
+    --shadow-4:  0px 0px 3px 0px rgb(from var(--shadow-color) r g b / 0.175), 0px 2px 7px  -1px rgb(from var(--shadow-color) r g b / 0.185), 0px 4px 11px -2px rgb(from var(--shadow-color) r g b / 0.140)
+    --shadow-5:  0px 0px 2px 0px rgb(from var(--shadow-color) r g b / 0.160), 0px 2px 6px  -1px rgb(from var(--shadow-color) r g b / 0.165), 0px 4px 9px  -2px rgb(from var(--shadow-color) r g b / 0.120)
+    --shadow-6:  0px 0px 2px 0px rgb(from var(--shadow-color) r g b / 0.140), 0px 2px 5px  -1px rgb(from var(--shadow-color) r g b / 0.145), 0px 3px 8px  -2px rgb(from var(--shadow-color) r g b / 0.105)
+    --shadow-7:  0px 0px 2px 0px rgb(from var(--shadow-color) r g b / 0.125), 0px 1px 4px  -1px rgb(from var(--shadow-color) r g b / 0.125), 0px 2px 6px  -1px rgb(from var(--shadow-color) r g b / 0.090)
+    --shadow-8:  0px 0px 2px 0px rgb(from var(--shadow-color) r g b / 0.105), 0px 1px 3px   0px rgb(from var(--shadow-color) r g b / 0.110), 0px 2px 5px  -1px rgb(from var(--shadow-color) r g b / 0.075)
+    --shadow-9:  0px 0px 1px 0px rgb(from var(--shadow-color) r g b / 0.090), 0px 1px 3px   0px rgb(from var(--shadow-color) r g b / 0.095)
+    --shadow-10: 0px 0px 1px 0px rgb(from var(--shadow-color) r g b / 0.075), 0px 1px 2px   0px rgb(from var(--shadow-color) r g b / 0.080)
+
+@for $i from 0 through 10
+    .shadow-#{$i}
+        box-shadow: var(--shadow-#{$i})

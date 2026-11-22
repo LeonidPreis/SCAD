@@ -3,6 +3,7 @@ import { AttributesManager } from "./attributes-manager.js";
 import { ClassesManager } from "./classes-manager.js";
 import { EventManager } from "./event-manager.js";
 import { HierarchyManager } from "./hierarchy-manager.js";
+import { StateManager } from "./state-manager.js";
 
 export class Component {
     element: HTMLElement;
@@ -11,6 +12,7 @@ export class Component {
     hierarchy!: HierarchyManager;
     appearance!: AppearanceManager;
     events!: EventManager;
+    state!: StateManager;
 
     constructor(value: string | HTMLElement) {
         this.element = value instanceof HTMLElement ? value : document.createElement(value);
@@ -23,5 +25,6 @@ export class Component {
         this.hierarchy = new HierarchyManager(this.element);
         this.appearance = new AppearanceManager(this.element);
         this.events = new EventManager(this.element);
+        this.state = new StateManager(this);
     }
 }

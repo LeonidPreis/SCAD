@@ -17,7 +17,7 @@ export class HierarchyManager {
     }
 
     get text(): string {
-        return this.element.textContent as string;
+        return this.element.textContent as string ?? "";
     }
 
     set text(value: string) {

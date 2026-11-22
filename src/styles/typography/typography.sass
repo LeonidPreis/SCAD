@@ -1,0 +1,31 @@
+
+@use "family"
+@use "weight"
+@use "size"
+
+:root
+    --on-0:  #ffffff
+    --on-1:  #ffffff
+    --on-2:  #ffffff
+    --on-3:  #ffffff
+    --on-4:  #ffffff
+    --on-5:  #ffffff
+    --on-6:  #ffffff
+    --on-7:  #ffffff
+    --on-8:  #ffffff
+    --on-9:  #ffffff
+    --on-10: #000000
+
+@for $i from 0 through 10
+    text-#{$i}
+        font-size: var(--text-size-#{$i})
+        font-weight: var(--regular)
+        color: var(--on-#{$i})
+
+.header
+    font-family: var(--head-font)
+    font-weight: var(--medium)
+
+.code
+    font-family: var(--code-font)
+    font-weight: var(--thin)

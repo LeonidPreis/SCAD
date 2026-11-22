@@ -1,0 +1,55 @@
+
+.icon
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+    border-radius: var(--radius-10)
+    width: var(--text-size-6)
+    height: var(--text-size-6)
+    border: none
+
+@function icon($name, $state: null)
+    $suffix: ""
+
+    @if $state
+        $suffix: "-#{$state}"
+
+    @return url("../../src/assets/icons/#{$name}#{$suffix}.svg")
+    
+@mixin icon-states($name)
+    background-image: icon($name)
+    background-position: center
+    background-repeat: no-repeat
+    background-size: contain
+
+    &::before,
+    &::after
+        content: ""
+        position: absolute
+        inset: 0
+        background-position: center
+        background-repeat: no-repeat
+        background-size: contain
+        opacity: 0
+        transition: opacity var(--hover-transition)
+
+    &::before
+        background-image: icon($name, "hovered")
+
+    &::after
+        background-image: icon($name, "activated")
+
+    &:hover:not(.disabled)
+        &::before
+            opacity: 1
+
+    &.activated
+        &::after
+            opacity: 1
+
+    &.disabled
+        background-image: icon($name, "disabled")
+        &::before,
+        &::after
+            opacity: 0

@@ -1,0 +1,20 @@
+:root
+    --spacing-0:  1.00mm
+    --spacing-1:  1.25mm
+    --spacing-2:  1.50mm
+    --spacing-3:  1.75mm
+    --spacing-4:  2.00mm
+    --spacing-5:  2.25mm
+    --spacing-6:  2.50mm
+    --spacing-7:  2.75mm
+    --spacing-8:  3.00mm
+    --spacing-9:  3.25mm
+    --spacing-10: 3.50mm
+
+@for $i from 0 through 10
+    .padding-#{$i}
+        padding: var(--spacing-#{$i})
+    .margin-#{$i}
+        margin: var(--spacing-#{$i})
+    .gap-#{$i}
+        gap: var(--spacing-#{$i})

@@ -1,0 +1,16 @@
+:root
+    --radius-0:  3.00mm
+    --radius-1:  2.75mm
+    --radius-2:  2.50mm
+    --radius-3:  2.25mm
+    --radius-4:  2.00mm
+    --radius-5:  1.75mm
+    --radius-6:  1.50mm
+    --radius-7:  1.25mm
+    --radius-8:  1.00mm
+    --radius-9:  0.75mm
+    --radius-10: 0.50mm
+
+@for $i from 0 through 10
+    .radius-#{$i}
+        border-radius: var(--radius-#{$i})

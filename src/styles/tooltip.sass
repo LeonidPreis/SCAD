@@ -1,0 +1,11 @@
+.tooltip
+    display: flex
+    pointer-events: none
+    opacity: 1
+    visibility: visible
+    transition: opacity var(--hover-transition), visibility var(--hover-transition)
+
+    &.hidden
+        display: flex
+        opacity: 0
+        visibility: hidden

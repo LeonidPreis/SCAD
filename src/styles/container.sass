@@ -1,0 +1,17 @@
+@for $i from 0 through 10
+    container-#{$i}
+        display: flex
+        flex-shrink: 0
+        gap: var(--spacing-#{$i})
+        padding: var(--spacing-#{$i})
+        border-radius: var(--radius-#{$i})
+        font-size: var(--text-size-#{$i})
+        justify-content: flex-start
+        align-items: stretch
+
+        &.vertical
+            flex-direction: column
+
+        &.horizontal
+            flex-direction: row
+            align-items: center

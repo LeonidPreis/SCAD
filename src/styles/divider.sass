@@ -1,0 +1,25 @@
+:root
+    --divider-color-0:  var(--surface-2)
+    --divider-color-1:  var(--surface-3)
+    --divider-color-2:  var(--surface-4)
+    --divider-color-3:  var(--surface-5)
+    --divider-color-4:  var(--surface-6)
+    --divider-color-5:  var(--surface-7)
+    --divider-color-6:  var(--surface-8)
+    --divider-color-7:  var(--surface-9)
+    --divider-color-8:  var(--surface-10)
+    --divider-color-9:  var(--surface-0)
+    --divider-color-10: var(--surface-1)
+
+@for $i from 0 through 10
+    divider-#{$i}
+        display: block
+        flex-shrink: 0
+        background-color: var(--divider-color-#{$i})
+        border-radius: calc(var(--thickness-0) * 0.5)
+        height: var(--thickness-0)
+        width: 100%
+
+        &.vertical
+            height: 100%
+            width: var(--thickness-0)
