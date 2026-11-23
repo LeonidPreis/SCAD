@@ -4,7 +4,7 @@
     align-items: center
     justify-content: center
     position: relative
-    border-radius: var(--radius-10)
+    border-radius: var(--radius-8)
     width: var(--text-size-6)
     height: var(--text-size-6)
     border: none
@@ -16,7 +16,7 @@
         $suffix: "-#{$state}"
 
     @return url("../../src/assets/icons/#{$name}#{$suffix}.svg")
-    
+
 @mixin icon-states($name)
     background-image: icon($name)
     background-position: center
@@ -32,7 +32,7 @@
         background-repeat: no-repeat
         background-size: contain
         opacity: 0
-        transition: opacity var(--hover-transition)
+        transition: opacity var(--opacity-transition)
 
     &::before
         background-image: icon($name, "hovered")

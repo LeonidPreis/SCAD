@@ -1,11 +1,66 @@
 .tooltip
+    position: fixed
     display: flex
     pointer-events: none
     opacity: 1
     visibility: visible
-    transition: opacity var(--hover-transition), visibility var(--hover-transition)
+
+    --origin-x: 0px
+    --origin-y: 0px
+
+    translate: 0 0
+    scale: 1
+
+    transition: opacity var(--opacity-transition), visibility var(--opacity-transition), translate var(--move-transition), scale var(--size-transition)
 
     &.hidden
-        display: flex
         opacity: 0
         visibility: hidden
+        translate: var(--origin-x) var(--origin-y)
+        scale: 0.25
+        transition: opacity var(--opacity-transition), visibility var(--opacity-transition), translate var(--move-transition), scale var(--size-transition)
+
+.origin-t-l
+    --origin-x: var(--size-4)
+    --origin-y: calc(var(--size-4) * 1.5)
+    transform-origin: 100% 100%
+
+.origin-t-c
+    --origin-x: 0px
+    --origin-y: var(--size-4)
+    transform-origin: 50% 100%
+
+.origin-t-r
+    --origin-x: calc(var(--size-4) * -1)
+    --origin-y: calc(var(--size-4) * 1.5)
+    transform-origin: 0 100%
+
+.origin-c-l
+    --origin-x: var(--size-4)
+    --origin-y: 0px
+    transform-origin: 100% 50%
+
+.origin-c-c
+    --origin-x: 0px
+    --origin-y: 0px
+    transform-origin: 50% 50%
+
+.origin-c-r
+    --origin-x: calc(var(--size-4) * -1)
+    --origin-y: 0px
+    transform-origin: 0 50%
+
+.origin-b-l
+    --origin-x: var(--size-4)
+    --origin-y: calc(var(--size-4) * -1.5)
+    transform-origin: 100% 0
+
+.origin-b-c
+    --origin-x: 0px
+    --origin-y: calc(var(--size-4) * -1)
+    transform-origin: 50% 0
+
+.origin-b-r
+    --origin-x: calc(var(--size-4) * -1)
+    --origin-y: calc(var(--size-4) * -1.5)
+    transform-origin: 0 0

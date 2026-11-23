@@ -11,7 +11,8 @@ body.hierarchy.append(pointTool.component.element);
 
 new Tooltip({
     component: pointTool.component,
-    header: 'POINT TOOL',
+    header: 'point tool',
     description: 'Set the point by coordinates.',
-    shortcut: ['CTRL', 'P'],
+    shortcut: ['CTRL','shift', 'P'],
+    position: 'b-r',
 });
